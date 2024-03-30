@@ -1,10 +1,9 @@
 package com.maids.backendquiz.productsmanagement.domain.model.resquest;
 
 
-import com.maids.backendquiz.productsmanagement.domain.enums.Role;
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateAppFields;
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateEmailConflict;
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateRole;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateAppFields;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateEmailConflict;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateRole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,9 +1,8 @@
-package com.maids.backendquiz.productsmanagement.exception.validation;
+package com.maids.backendquiz.productsmanagement.validation;
 
 
 
-import com.maids.backendquiz.productsmanagement.domain.enums.Role;
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateRole;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateRole;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

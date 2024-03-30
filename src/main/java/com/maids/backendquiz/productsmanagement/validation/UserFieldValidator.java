@@ -1,6 +1,6 @@
-package com.maids.backendquiz.productsmanagement.exception.validation;
+package com.maids.backendquiz.productsmanagement.validation;
 
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateAppFields;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateAppFields;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 public class UserFieldValidator implements ConstraintValidator<ValidateAppFields,String> {

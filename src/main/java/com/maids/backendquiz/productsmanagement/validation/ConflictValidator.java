@@ -1,7 +1,7 @@
-package com.maids.backendquiz.productsmanagement.exception.validation;
+package com.maids.backendquiz.productsmanagement.validation;
 
 import com.maids.backendquiz.productsmanagement.domain.repository.UserRepository;
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateEmailConflict;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateEmailConflict;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;

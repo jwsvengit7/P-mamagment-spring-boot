@@ -1,6 +1,6 @@
 package com.maids.backendquiz.productsmanagement.domain.model.resquest;
 
-import com.maids.backendquiz.productsmanagement.exception.validation.anotations.ValidateAppFields;
+import com.maids.backendquiz.productsmanagement.validation.anotations.ValidateAppFields;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

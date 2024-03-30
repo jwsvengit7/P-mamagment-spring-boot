@@ -1,6 +1,6 @@
-package com.maids.backendquiz.productsmanagement.exception.validation.anotations;
+package com.maids.backendquiz.productsmanagement.validation.anotations;
 
-import com.maids.backendquiz.productsmanagement.exception.validation.UserFieldValidator;
+import com.maids.backendquiz.productsmanagement.validation.UserFieldValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.*;
