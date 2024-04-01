@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @io.swagger.v3.oas.annotations.info.Info(
-                contact = @Contact(name = "", email = "@gmail.com", url = ""),
+                contact = @Contact(name = "Temple Jack Chiorlu", email = "chiorlujack@gmail.com", url = ""),
                 description = "Open API documentation for Spring security.",
-                title = "SMS READER",
+                title = "SYSTEM MANAGEMENT ",
                 version = "1.0",
                 license = @License(name = "Apache License", url = "https://www.apache.org/licenses/LICENSE-2"),
                 termsOfService = "Terms of Service"

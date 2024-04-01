@@ -40,8 +40,6 @@ public class AuthServiceImpl implements AuthService{
                 return ResponseUtils.responseType(loginResponse, HttpStatus.CONFLICT);
             }
 
-
-
             Users newUser = new Users();
             newUser.setEmail(userRegisterDto.getEmail());
             newUser.setName(userRegisterDto.getName());
@@ -69,7 +67,7 @@ public class AuthServiceImpl implements AuthService{
             loginResponse.setMessage("No user found");
             return ResponseUtils.responseType(loginResponse,HttpStatus.NO_CONTENT);
         }
-            if (passwordEncoder.matches(loginDto.getPassword(), user.getPassword())) {
+        if (passwordEncoder.matches(loginDto.getPassword(), user.getPassword())) {
                 Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
                 String jwtToken = jwtService.generateToken(authentication);
                 SecurityContextHolder.getContext().setAuthentication(authentication);

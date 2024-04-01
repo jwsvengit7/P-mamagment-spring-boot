@@ -29,19 +29,19 @@ public class JwtService {
     private long refreshExpiration;
 
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        return this.extractClaim(token, Claims::getSubject);
     }
 
-    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
     }
     public String generateToken(Authentication authentication) {
         final HashMap<String,Object> hashMap = new HashMap<>();
-        return buildToken(hashMap, authentication, jwtExpiration);
+        return this.buildToken(hashMap, authentication, jwtExpiration);
     }
     public String generateRefreshToken(Authentication authentication) {
-        return buildToken(new HashMap<>(), authentication, refreshExpiration);
+        return this.buildToken(new HashMap<>(), authentication, refreshExpiration);
     }
     private String buildToken(Map<String, Object> extraClaims,Authentication authentication, long expiration) {
 
@@ -54,14 +54,14 @@ public class JwtService {
                     .compact();
     }
     public boolean isTokenValid(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
+        final String username = this.extractUsername(token);
         return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
     }
     private boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
+        return this.extractExpiration(token).before(new Date());
     }
     private Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
+        return this.extractClaim(token, Claims::getExpiration);
     }
     private Claims extractAllClaims(String token) {
         return Jwts

@@ -1,1 +1,1 @@
-select * from SALES_TB
+select * from USER_TB

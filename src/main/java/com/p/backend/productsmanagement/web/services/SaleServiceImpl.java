@@ -1,6 +1,7 @@
 package com.p.backend.productsmanagement.web.services;
 
 import com.p.backend.productsmanagement.domain.entities.*;
+import com.p.backend.productsmanagement.domain.enums.Role;
 import com.p.backend.productsmanagement.domain.model.response.APIResponse;
 import com.p.backend.productsmanagement.domain.model.response.DataResponse;
 import com.p.backend.productsmanagement.domain.model.response.SalesReport;
@@ -92,13 +93,18 @@ public class SaleServiceImpl implements SaleService {
                 .collect(Collectors.toList());
         report.setTopSellingProducts(topSellingProducts);
 
-        Map<Users, Double> sellerRevenue = new HashMap<>();
+        Map<DataResponse, Double> sellerRevenue = new HashMap<>();
+        DataResponse dataResponse = new DataResponse();
         for (Sale sale : sales) {
             Users seller = sale.getSeller();
             double saleRevenue = sale.getTotal();
-            sellerRevenue.put(seller, sellerRevenue.getOrDefault(seller, 0.0) + saleRevenue);
+            dataResponse.setId(seller.getId());
+            dataResponse.setName(seller.getName());
+            dataResponse.setEmail(seller.getEmail());
+            dataResponse.setRole(seller.getRole().getName());
+            sellerRevenue.put(dataResponse, sellerRevenue.getOrDefault(seller, 0.0) + saleRevenue);
         }
-        List<Users> topPerformingSellers = sellerRevenue.entrySet().stream()
+        List<DataResponse> topPerformingSellers = sellerRevenue.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(10)
                 .map(Map.Entry::getKey)

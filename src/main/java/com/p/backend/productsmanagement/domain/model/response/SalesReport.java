@@ -16,6 +16,6 @@ public class SalesReport {
     private int totalSales;
     private double totalRevenue;
     private List<Product> topSellingProducts;
-    private List<Users> topPerformingSellers;
+    private List<DataResponse> topPerformingSellers;
 
 }

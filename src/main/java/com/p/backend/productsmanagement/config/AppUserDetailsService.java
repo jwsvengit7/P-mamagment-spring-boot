@@ -32,7 +32,7 @@ public class AppUserDetailsService implements UserDetailsService {
         return new User(user.getEmail(),user.getPassword(),getAuthorities(user));
     }
 
-    private Collection<? extends GrantedAuthority> getAuthorities(Users user){
+    private Collection<GrantedAuthority> getAuthorities(Users user){
         return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().name()));
     }
 }
