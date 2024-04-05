@@ -137,7 +137,9 @@ public class ProductServiceImpl implements ProductService {
                 product.setAvailableQuantity(productRequest.getInitialQuantity());
                 product.setCategory(productRequest.getCategory());
                 product.setDescription(productRequest.getDescription());
+                product.setPrice(productRequest.getPrice());
                 product.setCreationDate(LocalDateTime.now());
+                productRepository.save(product);
                 dataResponse.setMessage("Product Have been updated");
                 return ResponseUtils.responseType(dataResponse, HttpStatus.OK);
             }else {

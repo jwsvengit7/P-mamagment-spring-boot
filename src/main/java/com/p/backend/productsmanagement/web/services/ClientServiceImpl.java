@@ -135,6 +135,7 @@ public class ClientServiceImpl  implements ClientService{
                 client.setEmail(client.getEmail());
                 client.setAddress(client.getAddress());
                 client.setName(client.getName());
+                clientRepository.save(client);
                 dataResponse.setMessage("Client Have been updated");
                 return ResponseUtils.responseType(dataResponse, HttpStatus.OK);
             }else {
